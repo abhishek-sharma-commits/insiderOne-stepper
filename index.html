@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <main class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+         <div id="stepper-root" class="w-full max-w-md bg-white rounded-[2.5rem] shadow-xl border border-[#222] overflow-hidden">
+        
+        <!-- Step Indicators -->
+        <div id="step-indicators" class="flex w-full items-center p-8 pb-4">
+            <div class="step-indicator-wrapper relative cursor-pointer" onclick="goToStep(1)">
+                <div id="circle-1" class="flex h-8 w-8 items-center justify-center rounded-full font-semibold transition-all duration-300"></div>
+            </div>
+            <div class="relative mx-2 h-0.5 flex-1 rounded bg-neutral-600">
+                <div id="line-1" class="step-connector-fill absolute left-0 top-0 h-full bg-[#5227FF]" style="width: 0%;"></div>
+            </div>
+
+            <div class="step-indicator-wrapper relative cursor-pointer" onclick="goToStep(2)">
+                <div id="circle-2" class="flex h-8 w-8 items-center justify-center rounded-full font-semibold transition-all duration-300"></div>
+            </div>
+            <div class="relative mx-2 h-0.5 flex-1 rounded bg-neutral-600">
+                <div id="line-2" class="step-connector-fill absolute left-0 top-0 h-full bg-[#5227FF]" style="width: 0%;"></div>
+            </div>
+
+            <div class="step-indicator-wrapper relative cursor-pointer" onclick="goToStep(3)">
+                <div id="circle-3" class="flex h-8 w-8 items-center justify-center rounded-full font-semibold transition-all duration-300"></div>
+            </div>
+            <div class="relative mx-2 h-0.5 flex-1 rounded bg-neutral-600">
+                <div id="line-3" class="step-connector-fill absolute left-0 top-0 h-full bg-[#5227FF]" style="width: 0%;"></div>
+            </div>
+
+            <div class="step-indicator-wrapper relative cursor-pointer" onclick="goToStep(4)">
+                <div id="circle-4" class="flex h-8 w-8 items-center justify-center rounded-full font-semibold transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- Step Content Area -->
+        <div id="content-area" class="px-8 space-y-4">
+            
+            <!-- Step 1 -->
+            <div id="step-content-1" class="step-content active">
+                <h3 class="text-xl font-bold">What are you?</h3>
+                <p class="text-neutral-500 mb-4 text-sm">Selection required to proceed</p>
+                <div class="space-y-2">
+                    <input type="radio" name="step1" value="Student" id="student" class="hidden">
+                    <label for="student" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Student</label>
+                    
+                    <input type="radio" name="step1" value="Job Seeker" id="job_Seeker" class="hidden">
+                    <label for="job_Seeker" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Job Seeker</label>
+
+                    <input type="radio" name="step1" value="Fresher" id="fresh" class="hidden">
+                    <label for="fresh" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Fresher</label>
+
+                    <input type="radio" name="step1" value="Professional" id="pro" class="hidden">
+                    <label for="pro" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Professional</label>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step-content-2" class="step-content">
+                <h3 class="text-xl font-bold">What do you want next?</h3>
+                <p class="text-neutral-500 mb-4 text-sm">Selection required to proceed</p>
+                <div class="space-y-2">
+                    <input type="radio" name="step2" value="Job" id="job" class="hidden">
+                    <label for="job" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">A new Job</label>
+                    
+                    <input type="radio" name="step2" value="Upskill" id="upskill" class="hidden">
+                    <label for="upskill" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">To Upskill</label>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step-content-3" class="step-content">
+                <h3 class="text-xl font-bold">Main Constraint?</h3>
+                <p class="text-neutral-500 mb-4 text-sm">Selection required to proceed</p>
+                <div class="space-y-2">
+                    <input type="radio" name="step3" value="Money" id="money" class="hidden">
+                    <label for="money" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Money</label>
+                    
+                    <input type="radio" name="step3" value="Time" id="time" class="hidden">
+                    <label for="time" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Time</label>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step-content-4" class="step-content">
+                <h3 class="text-xl font-bold">Final Confirmation</h3>
+                <p class="text-neutral-500 mb-4 text-sm">Confirm that the info is correct.</p>
+                <div class="flex items-center space-x-2 p-4 bg-gray-50 rounded-2xl">
+                    <input type="checkbox" id="confirm" class="w-5 h-5 accent-[#5227FF]">
+                    <label for="confirm" class="text-sm cursor-pointer">I confirm my selections</label>
+                </div>
+            </div>
+
+            <!-- Success -->
+            <div id="step-content-final" class="step-content">
+                <div class="text-center py-6">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+                    <h3 class="text-xl font-bold text-gray-800">Done!</h3>
+                    <p class="text-neutral-500">Your data has been submitted.</p>
+                </div>
+            </div>
+
+            <!-- Validation Message -->
+            <div id="error-box" class="text-red-500 text-xs font-medium hidden">Please select an option before continuing.</div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer" class="px-8 pb-8 pt-10">
+            <div class="flex justify-between">
+                <button id="back-btn" onclick="handleBack()" class="invisible text-neutral-400 hover:text-neutral-700 transition px-2 py-1">Back</button>
+                <button id="next-btn" onclick="handleNext()" class="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-2 rounded-full transition">Continue</button>
+            </div>
+        </div>
+    </div>
+    </main>
+
+   
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
