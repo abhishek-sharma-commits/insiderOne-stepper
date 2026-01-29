@@ -3,7 +3,7 @@ let currentStep = 1;
 
         // SVGs
         const checkIcon = `<svg class="h-4 w-4 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>`;
-        const activeDot = `<div class="h-3 w-3 rounded-full bg-[#060010]"></div>`;
+        const activeDot = `<div class="h-3 w-3 rounded-full bg-slate-900"></div>`;
 
         function isStepValid(step) {
             if (step === 4) {
@@ -33,11 +33,11 @@ let currentStep = 1;
 
                 if (i < currentStep) {
                     circle.innerHTML = checkIcon;
-                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#5227FF]";
+                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#f5f3ff]";
                     if (line) line.style.width = "100%";
                 } else if (i === currentStep) {
                     circle.innerHTML = activeDot;
-                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#5227FF]";
+                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#f5f3ff]";
                     if (line) line.style.width = "0%";
                 } else {
                     circle.innerHTML = `<span class="text-sm">${i}</span>`;
