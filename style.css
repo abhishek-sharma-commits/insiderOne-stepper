@@ -24,8 +24,8 @@
 
 /* Highlight labels when radio is checked */
 input[type="radio"]:checked + label {
-  border-color: #FAFFD1;
-  background-color: #f5f3ff;
+  background: rgb(255, 250, 230);
+border-color: rgb(255, 230, 150);
   color: #111014;
   box-shadow: 0 0 0 2px rgba(190, 190, 25, 0.228);
 }
