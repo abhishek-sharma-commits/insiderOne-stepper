@@ -6,6 +6,10 @@
     <title>Stepper</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
 </head>
 <body >
     <main class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
@@ -68,6 +72,9 @@
                 <div class="space-y-2">
                     <input type="radio" name="step2" value="Job" id="job" class="hidden">
                     <label for="job" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">A new Job</label>
+
+                    <input type="radio" name="step2" value="switch_job" id="switch_job" class="hidden">
+                    <label for="switch_job" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Switch Job</label>
                     
                     <input type="radio" name="step2" value="Upskill" id="upskill" class="hidden">
                     <label for="upskill" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">To Upskill</label>
@@ -84,6 +91,9 @@
                     
                     <input type="radio" name="step3" value="Time" id="time" class="hidden">
                     <label for="time" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Time</label>
+
+                      <input type="radio" name="step3" value="loc" id="loc" class="hidden">
+                    <label for="loc" class="block w-full p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">Location</label>
                 </div>
             </div>
 
@@ -100,9 +110,9 @@
             <!-- Success -->
             <div id="step-content-final" class="step-content">
                 <div class="text-center py-6">
-                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
-                    <h3 class="text-xl font-bold text-gray-800">Done!</h3>
-                    <p class="text-neutral-500">Your data has been submitted.</p>
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="ri-loader-2-line"></i></div>
+                    <h3 class="text-xl font-bold text-gray-800">Generating!</h3>
+                    <p class="text-neutral-500">Please Wait Generating your Career Snapshot.</p>
                 </div>
             </div>
 

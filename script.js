@@ -69,12 +69,11 @@ let currentStep = 1;
         }
 
         function goToStep(target) {
-            // If going backwards, just go.
             if (target < currentStep) {
                 currentStep = target;
                 updateUI();
             } 
-            // If going forwards, we must validate every step in between.
+            // If going forwards, validate every step in between.
             else if (target > currentStep) {
                 for (let i = currentStep; i < target; i++) {
                     if (!isStepValid(i)) {
