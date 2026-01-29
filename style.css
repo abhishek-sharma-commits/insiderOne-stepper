@@ -1,3 +1,7 @@
+*{
+  font-family: sans-serif;
+}
+
 .step-content {
   display: none;
   width: 100%;
