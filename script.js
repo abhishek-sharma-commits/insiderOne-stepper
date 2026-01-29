@@ -33,11 +33,11 @@ let currentStep = 1;
 
                 if (i < currentStep) {
                     circle.innerHTML = checkIcon;
-                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#b0aebd]";
+                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#EBB400]";
                     if (line) line.style.width = "100%";
                 } else if (i === currentStep) {
                     circle.innerHTML = activeDot;
-                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#b0aebd]";
+                    circle.className = "flex h-8 w-8 items-center justify-center rounded-full bg-[#EBB400]";
                     if (line) line.style.width = "0%";
                 } else {
                     circle.innerHTML = `<span class="text-sm">${i}</span>`;
